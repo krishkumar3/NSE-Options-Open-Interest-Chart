@@ -1,7 +1,6 @@
 import requests
 import json
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 from numpy import *
 from matplotlib.pyplot import figure
@@ -10,8 +9,6 @@ from datetime import date
 from datetime import timedelta
 import datetime
 import time
-from json import JSONDecodeError
-
 
 
 def basic():
@@ -65,9 +62,9 @@ def plot_prices(ce_dt,pe_dt,cmp):
             pe = pe[:-20]
             break
  
-    ax = ce.plot(figsize=(15,6),x='strikePrice',y='lastPrice',kind='bar',color='red',xlabel='Strike Price',ylabel='Price'
+    ax = ce.plot(figsize=(15,6),x='strikePrice',y='lastPrice',title=cmp,kind='bar',color='red',xlabel='Strike Price',ylabel='Price'
             ,yticks=list(range(0,int(max(ce['lastPrice']+pe['lastPrice'])),50)),position=1,width=0.25)
-    pe.plot(figsize=(15,6),ax=ax,position=0,x='strikePrice',y='lastPrice',kind='bar',color='green',yticks=list(range(0,int(max(ce['lastPrice']+pe['lastPrice'])),50)),width=0.25)
+    pe.plot(figsize=(15,6),ax=ax,position=0,x='strikePrice',y='lastPrice',title=cmp,kind='bar',color='green',yticks=list(range(0,int(max(ce['lastPrice']+pe['lastPrice'])),50)),width=0.25)
     ax.set_facecolor([0.78,0.78,0.88])
 
 
