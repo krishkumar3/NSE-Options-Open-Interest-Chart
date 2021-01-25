@@ -1,7 +1,6 @@
 import requests
 import json
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 from numpy import *
 from matplotlib.pyplot import figure
@@ -10,7 +9,6 @@ from datetime import date
 from datetime import timedelta
 import datetime
 import time
-from json import JSONDecodeError
 
 
 
